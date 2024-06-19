@@ -10,48 +10,97 @@
 <body>
     <div class="Home"> 
         <header class="header">
-            <div class="left-header">
-                <div class="nav navbar-dark container-fluid">
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" href="#navBar" role="button" aria-expanded="false" aria-controls="navBar">
+            <div class="left-header" styles=";">
+                <div class="navbar-dark d-flex flex-row">
+                    <button type="button" class="navbar-toggler btn button-primary m-3" data-bs-toggle="offcanvas" href="#navBar" role="button" aria-controls="navBar" style="width: 50px; height: 50px; background-color: blue; border-radius: 20px;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <nav class="offcanvas offcanvas-start show" tabindex="-1" id="navBar" aria-labelledby="offcanvasLabel">
+                        <div class="offcanvas-header">
+                            <h3 class="offcanvas-title" id="offcanvasLabel">NavBar</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <button class="log-in" id="log-in-btn">Log in</button>
+                            <button class="about" id="about-btn">About</button>
+                            <button class="faq" id="faq-btn">FAQ</button>
+                            <button class="contact" id="contact-btn">Contact</button>
+                        </div>
+                    </nav>
                     <div class="directory">
                         <h2>Weather App</h2>
                         <h4>Weather/Home</h4>
                     </div>
                 </div>
             </div>
-            <div class="location">
-                <h2>LOCATION</h2>
+            <div id="location" class="location mx-auto p-3" styles="width: 80%;">
+                
             </div>
 
         </header>
-        <div class="main-body">
-            <div class="weather-alerts">
-
-            </div>
-            <div class="forecast">
-
-
-            </div>
-            <div style="min-height: 120px;">
-                <nav class="collapse collapse-horizontal" id="navBar">
-                    <div class="card card-body" style="width: 300px;">
-                        <button class="log-in" id="log-in-btn">Log in</button>
-                        <button class="about" id="about-btn">About</button>
-                        <button class="faq" id="faq-btn">FAQ</button>
-                        <button class="contact" id="contact-btn">Contact</button>
+        <div class="main-body p-3">
+            <div class="current-bar card mx-auto" style="width: 98%; height: 15%; background-color: bisque;">
+                <div class="card-body d-flex flex-row align-items-center justify-content-start p-4">
+                    <h3 class="card-title">Current Weather</h3>
+                    <div id="current-weather" class="card-text d-flex justify-content-center">
+                        
                     </div>
-                </nav>
+                </div>
+            </div> 
+            <div class="lower-body d-flex flex-row p-3" >
+                <div class="card weather-alerts me-3" style="width: 400px; height: 500px; background-color: bisque;">
+                    <div id="carouselIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Weather Alerts"></button>
+                            <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Weather-Map"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p>hello</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p>fnujneavnesja</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        
+                    </div>
+                </div>
+                <div class="forecast d-flex flex-row justify-content-between" style="width: 85%; height: 90%; border-radius: 10px; background-color: bisque;">
+                    <div class="card py-3" style="width: 49%; height: 500px; background-color:blue;">
+                        <div class="card-title ms-3"><h3>24 Hour Forecast</h3></div>
+                        <div class="card-body overflow-scroll" style="height: 400px;" >
+                            <ul id="hourly-forecast" class="list-group">
+                    
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 49%; height: 500px; background-color: aquamarine;">
+                        <canvas id="acquisitions"></canvas>
+
+                    </div>
+                </div>
             </div>
+
+
         </div>
 
 
 
     </div>
 
-
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="javascript/main.js"></script>
+    <script type="module" src="src/acquisitions.js"></script>
+    <script type="module" src="javascript/main.js"></script>
+    
+
 </body>
 </html>

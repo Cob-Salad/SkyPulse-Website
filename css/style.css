@@ -6,25 +6,14 @@ header{
 }
 
 .left-header{
-    display: flex; 
-    width: 700px;
+    min-width: 300px;
     background-color: brown;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+
 }
 
-.navbar-toggler{
-    top: 50%;
-    width: 50px; 
-    height: 50px; 
-    background-color: blue;
-
-    justify-content: center;
-    
-}
 
 .location{
     align-items: center;
+    text-align: center;
 }
 
